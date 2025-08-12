@@ -4,7 +4,7 @@ import Heading from "../ui/Heading";
 const Blogs = () => {
   return (
     <div>
-      <Heading />
+      <Heading title="Discover Popular Blogs" />
     </div>
   );
 };

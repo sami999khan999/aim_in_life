@@ -93,3 +93,17 @@
     );
   }
 }
+
+@keyframes ping {
+  0%,
+  100% {
+    opacity: 0;
+  }
+}
+.animation-ping {
+  animation: ping 2s infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 1s;
+}
