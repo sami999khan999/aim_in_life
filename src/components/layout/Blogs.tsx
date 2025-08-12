@@ -1,7 +1,12 @@
 import React from "react";
+import Heading from "../ui/Heading";
 
 const Blogs = () => {
-  return <div>Blogs</div>;
+  return (
+    <div>
+      <Heading />
+    </div>
+  );
 };
 
 export default Blogs;

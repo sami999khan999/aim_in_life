@@ -21,8 +21,8 @@ const Hero = () => {
           </h1>
         </div>
         <p
-          className="text-text-color-muted text-center
-          lg:text-size-18 line-clamp-2 w-[90%] tracking-wide"
+          className="text-text-color-muted/80 text-center
+          lg:text-size-18 line-clamp-2 w-[90%] tracking-wide font-medium"
         >
           Discover fresh ideas, inspiring stories, and expert insights your
           daily destination for knowledge, creativity, and meaningful
