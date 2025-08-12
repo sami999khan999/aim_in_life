@@ -1,0 +1,18 @@
+services:
+  web:
+    container_name: aim_in_life
+    build: ./
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env.local
+
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        - path: ./
+          target: /app
+          action: sync
