@@ -7,9 +7,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuTrigger,
   DropdownMenuPortal,
-  DropdownMenuItemIndicator,
+  DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
