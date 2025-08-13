@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
         <p
           className="text-text-color-muted/80 text-center
-          lg:text-size-18 line-clamp-2 w-[90%] tracking-wide font-medium"
+          lg:text-size-18 line-clamp-2 w-[90%] tracking-wide"
         >
           Discover fresh ideas, inspiring stories, and expert insights your
           daily destination for knowledge, creativity, and meaningful
@@ -30,7 +30,7 @@ const Hero = () => {
         </p>
         <SearchBar />
       </div>
-      <div className="absolute top-0 left-0 bg-pattern w-[200px] h-full hidden lg:block" />
+      <div className="absolute -z-10 top-0 left-0 bg-pattern w-[500px] aspect-square hidden lg:block " />
       {/* <div className="glow-ball absolute  -top-40 -left-40 w-[400px] h-[400px] hidden lg:block" /> */}
     </div>
   );

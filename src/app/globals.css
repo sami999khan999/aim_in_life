@@ -19,6 +19,7 @@
 
   --font-outfit: var(--outfit);
   --font-geist-mono: var(--geist-mono);
+  --font-anek-bangla: var(--anek-bangla);
 
   --text-size-32: 2rem;
   --text-size-28: 1.75rem;
@@ -57,11 +58,15 @@
   body {
     @apply font-outfit overflow-x-hidden overflow-y-auto;
   }
+
+  /* body[data-scroll-locked] {
+    overflow-y: auto !important;
+  } */
 }
 
 @layer utilities {
   .display-size {
-    @apply w-full lg:w-[1000px] xl:w-[1200px]  2xl:w-[1300px];
+    @apply w-full lg:w-[1000px] xl:w-[1200px] 2xl:w-[1300px];
   }
 
   .gradient-text {
@@ -78,9 +83,9 @@
 
   .bg-pattern {
     background-image: url("/bg/bg-pattern.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top left;
   }
 
   .glow-ball {
@@ -88,9 +93,22 @@
     background: radial-gradient(
       circle,
       oklch(0.6041 0.1442 257.43 / 0.1) 0%,
-      /* bright center */ oklch(0.9716 0.0066 286.28/0.5) 60%,
-      /* mid fade */ transparent 100% /* fade out */
+      oklch(0.9716 0.0066 286.28/0.5) 60%,
+      transparent 100%
     );
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 4px;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-secondary);
   }
 }
 

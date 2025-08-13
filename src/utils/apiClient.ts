@@ -43,6 +43,8 @@ const apiClient = async <T>(
 
     const contentType = res.headers.get("content-type") || "";
 
+    console.log(res);
+
     if (contentType.includes("application/json")) {
       const json = await res.json();
       if (res.ok) {

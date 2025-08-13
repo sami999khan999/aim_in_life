@@ -13,25 +13,19 @@ import {
 import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 const NavItems = () => {
   const path = usePathname();
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <div className="flex items-center flex-col lg:flex-row lg:gap-space-md gap-space-xl lg:text-size-16 text-size-18 text-text-color">
       {NAV_LINKS.map((link) => (
         <div key={link.name} className="relative">
           {link.name === "Services" && link.services ? (
-            <DropdownMenu onOpenChange={setIsServicesOpen}>
-              <DropdownMenuTrigger className="px-space-md py-space-xs hover:bg-bg-dark rounded-sm duration-200 cursor-pointer font-medium flex items-center gap-space-sm">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="group px-space-md py-space-xs hover:bg-bg-dark rounded-sm duration-200 cursor-pointer font-medium flex items-center gap-space-sm">
                 {link.name}
-                <ChevronDownIcon
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    isServicesOpen ? "rotate-180" : ""
-                  }`}
-                />
+                <ChevronDownIcon className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
 
               <DropdownMenuPortal>
