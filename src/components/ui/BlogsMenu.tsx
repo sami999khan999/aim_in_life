@@ -3,9 +3,28 @@
 import Image from "next/image";
 import { formatDate } from "@/utils/dateFormat";
 import { SlCalender } from "react-icons/sl";
-import { BlogData } from "@/types/blogTypes";
+import { BlogDataType } from "@/types/blogTypes";
+import BlogMenuSkeliton from "../skeliton/BlogMenuSkeliton";
 
-const BlogsMenu = ({ blogs }: { blogs: BlogData[] }) => {
+const BlogsMenu = ({
+  blogs,
+  isLoading,
+}: {
+  blogs: BlogDataType[] | undefined;
+  isLoading: boolean;
+}) => {
+  if (isLoading) {
+    return <BlogMenuSkeliton />;
+  }
+
+  if (!blogs || blogs.length === 0) {
+    return (
+      <div className="px-space-sm py-space-base text-text-color-muted text-center">
+        No blogs available.
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-space-xl px-space-sm">
       {blogs.map((blog, i) => (
@@ -16,8 +35,11 @@ const BlogsMenu = ({ blogs }: { blogs: BlogData[] }) => {
             }`}
           ></div>
           <div className="relative bg-bg-light p-space-base rounded-xl shadow-sm">
-            <div className=" flex gap-space-xl flex-col lg:flex-row items-center">
-              <div className="relative w-[150px] h-[150px] bg-bg-dark rounded-xl overflow-hidden border-border shrink-0 shadow-sm">
+            <div className="flex gap-space-xl flex-col lg:flex-row">
+              <div
+                className="relative w-[150px] h-[150px] bg-bg-dark rounded-xl overflow-hidden border-border shrink-0 shadow-sm"
+                onClick={() => (window.location.href = `/blog/${blog.slug}`)}
+              >
                 <Image
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${blog.image}`}
                   alt={blog.title}
@@ -26,15 +48,18 @@ const BlogsMenu = ({ blogs }: { blogs: BlogData[] }) => {
                   className="hover:scale-105 duration-300"
                 />
               </div>
-              <div className="py-space-sm font-anek-bangla flex flex-col justify-between">
+              <div
+                className="py-space-sm font-anek-bangla flex flex-col"
+                onClick={() => (window.location.href = `/blog/${blog.slug}`)}
+              >
                 <h2 className="relative cursor-pointer text-xl hover:text-primary group duration-300 text-text-color font-medium w-fit">
                   {blog.title}
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </h2>
 
-                <div className="hidden lg:block">
+                <div className="hidden lg:block mt-space-lg">
                   <div
-                    className="shrink-0 line-clamp-3 my-auto text-size-14 tracking-wide"
+                    className="shrink-0 line-clamp-3 my-auto text-size-14 tracking-wide cursor-pointer"
                     dangerouslySetInnerHTML={{ __html: blog.short_description }}
                   />
                 </div>
@@ -59,7 +84,7 @@ const BlogsMenu = ({ blogs }: { blogs: BlogData[] }) => {
                   {blog.category.category_name}
                 </p>
 
-                <hr className="absolute bottom-0 left-0 w-full border-t  opacity-0 transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:-translate-y-0" />
+                <hr className="absolute bottom-0 left-0 w-full border-t opacity-0 transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:-translate-y-0" />
               </div>
 
               <div className="text-size-14 text-text-color-muted font-medium flex items-center gap-space-sm cursor-pointer">

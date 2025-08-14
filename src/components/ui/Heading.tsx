@@ -5,19 +5,26 @@ import PingAnimation from "./PingAnimation";
 
 const Heading = ({
   className,
+  titleClassName,
   title,
 }: {
   className?: ClassValue;
+  titleClassName?: ClassValue;
   title: string;
 }) => {
   return (
-    <div className="flex w-full items-center justify-center space-x-space-lg my-space-xl">
+    <div
+      className={cn(
+        "flex w-full items-center justify-center space-x-space-lg",
+        className
+      )}
+    >
       <PingAnimation />
 
       <h2
         className={cn(
           "text-2xl text-text-color font-medium tracking-wide text-center",
-          className
+          titleClassName
         )}
       >
         {title}

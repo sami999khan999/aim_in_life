@@ -48,7 +48,7 @@ const SearchBar = ({ className }: { className?: ClassValue }) => {
         type="submit"
         className="bg-primary p-space-sm rounded-full text-bg-light hover:bg-text-color flex items-center justify-center duration-300"
       >
-        <FiSearch size={20} />
+        <FiSearch size={16} />
       </button>
     </form>
   );

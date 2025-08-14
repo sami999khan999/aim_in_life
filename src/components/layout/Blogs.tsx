@@ -1,11 +1,13 @@
 "use client";
 
-import { BlogData } from "@/constants/NavConstants";
 import useBlogState from "@/hooks/useBlogState";
 import { useEffect } from "react";
 import BlogsMenu from "../ui/BlogsMenu";
 import Heading from "../ui/Heading";
 import Pagination from "../ui/Pagination";
+import { BlogDataType } from "@/types/blogTypes";
+import { BlogData } from "@/constants/NavConstants";
+import PaginationSkeleton from "../skeliton/PaginationSkeliton";
 
 const Blogs = () => {
   const {
@@ -16,7 +18,8 @@ const Blogs = () => {
     totalPages,
     setTotalPages,
     setIsLoading,
-  } = useBlogState();
+    isLoading,
+  } = useBlogState<BlogDataType[]>();
 
   useEffect(() => {
     const getBlogs = async () => {
@@ -54,10 +57,15 @@ const Blogs = () => {
 
   return (
     <div>
-      <Heading title="Discover Popular Blogs" />
+      <Heading title="Discover Popular Blogs" className="my-space-xl" />
 
-      <BlogsMenu blogs={blog} />
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      <BlogsMenu blogs={blog} isLoading={isLoading} />
+
+      {!isLoading ? (
+        <Pagination currentPage={currentPage} totalPages={totalPages} />
+      ) : (
+        <PaginationSkeleton />
+      )}
     </div>
   );
 };

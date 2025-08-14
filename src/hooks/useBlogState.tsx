@@ -1,12 +1,10 @@
-// useBlogState.tsx
 "use client";
 
-import { BlogData } from "@/types/blogTypes";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const useBlogState = () => {
-  const [blog, setBlog] = useState<BlogData[] | []>([]);
+const useBlogState = <T,>() => {
+  const [blog, setBlog] = useState<T | undefined>();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);

@@ -1,14 +1,18 @@
 export function formatDate(dateString: string): string {
-  // Create a new Date object from the input string
   const date = new Date(dateString);
 
-  // Define the formatting options for the date
+  // Check if the date is valid before formatting
+  if (isNaN(date.getTime())) {
+    // Return a default value or handle the error
+    console.error("Invalid date string provided:", dateString);
+    return "Invalid Date";
+  }
+
   const options: Intl.DateTimeFormatOptions = {
-    weekday: "short", // "Wed"
-    month: "long", // "August"
-    day: "numeric", // "13"
+    weekday: "short",
+    month: "long",
+    day: "numeric",
   };
 
-  // Use Intl.DateTimeFormat to format the date according to the options and 'en-US' locale
   return new Intl.DateTimeFormat("en-US", options).format(date);
 }

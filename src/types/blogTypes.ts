@@ -8,7 +8,7 @@ export type Category = {
   updated_at: string | null;
 };
 
-export type BlogData = {
+export type BlogDataType = {
   id: number;
   category_id: string;
   user_id: number;
@@ -27,7 +27,7 @@ export type BlogData = {
 export type BlogsResponse = {
   blogs: {
     current_page: number;
-    data: BlogData[];
+    data: BlogDataType[];
     first_page_url: string;
     from: number;
     last_page: number;
@@ -39,4 +39,8 @@ export type BlogsResponse = {
     to: number;
     total: number;
   };
+};
+
+export type BlogResponse = {
+  blog: BlogDataType;
 };

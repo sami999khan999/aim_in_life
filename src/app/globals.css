@@ -56,17 +56,13 @@
 
 @layer base {
   body {
-    @apply font-outfit overflow-x-hidden overflow-y-auto;
+    @apply font-outfit overflow-x-hidden overflow-y-auto scroll-smooth;
   }
-
-  /* body[data-scroll-locked] {
-    overflow-y: auto !important;
-  } */
 }
 
 @layer utilities {
   .display-size {
-    @apply w-full lg:w-[1000px] xl:w-[1200px] 2xl:w-[1300px];
+    @apply w-full lg:w-[1050px] xl:w-[1300px] 2xl:w-[1400px];
   }
 
   .gradient-text {
