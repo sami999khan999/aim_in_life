@@ -9,7 +9,7 @@ const NewsLetter = () => {
   return (
     <div className="space-y-space-sm">
       <div className="flex  items-center gap-space-base">
-        <PingAnimation />
+        <PingAnimation className="w-2" />
         <h3 className="text-size-16 font-medium text-text-color">Newsletter</h3>
       </div>
       <p className="text-size-14 text-text-color-muted">
