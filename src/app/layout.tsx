@@ -1,5 +1,6 @@
+import Footer from "@/components/layout/Footer";
 import type { Metadata } from "next";
-import { Anek_Bangla, Geist, Geist_Mono, Outfit } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Bengali, Outfit } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,7 +18,7 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-const anekBangla = Anek_Bangla({
+const anekBangla = Noto_Sans_Bengali({
   variable: "--font-anek-bangla",
   subsets: ["latin"],
 });
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${anekBangla.variable} antialiased bg-bg scroll-container`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

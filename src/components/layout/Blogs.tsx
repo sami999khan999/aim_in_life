@@ -1,13 +1,12 @@
 "use client";
 
-import useBlogState from "@/hooks/useBlogState";
-import { useEffect } from "react";
-import BlogsMenu from "../ui/BlogsMenu";
-import Heading from "../ui/Heading";
-import Pagination from "../ui/Pagination";
-import { BlogDataType } from "@/types/blogTypes";
 import { BlogData } from "@/constants/NavConstants";
+import useBlogState from "@/hooks/useBlogState";
+import { BlogDataType } from "@/types/blogTypes";
+import { Suspense, useEffect } from "react";
 import PaginationSkeleton from "../skeliton/PaginationSkeliton";
+import BlogsMenu from "../ui/BlogsMenu";
+import Pagination from "../ui/Pagination";
 
 const Blogs = () => {
   const {
@@ -31,14 +30,14 @@ const Blogs = () => {
       //   setBlog([]);
       //   return;
       // }
-      // console.log(data);
+
       // if (data) {
       //   setBlog(data.blogs.data);
       //   setCurrentPage(data.blogs.current_page);
       //   setTotalPages(data.blogs.last_page);
       // }
       setBlog(BlogData.blogs.data);
-      setCurrentPage(3);
+      // setCurrentPage(3);
       setTotalPages(40);
       setIsLoading(false);
     };
@@ -53,16 +52,16 @@ const Blogs = () => {
     setTotalPages,
   ]);
 
-  console.log(currentPage);
+  console.log(blog);
 
   return (
-    <div>
-      <Heading title="Discover Popular Blogs" className="my-space-xl" />
-
+    <div className="w-full">
       <BlogsMenu blogs={blog} isLoading={isLoading} />
 
       {!isLoading ? (
-        <Pagination currentPage={currentPage} totalPages={totalPages} />
+        <Suspense>
+          <Pagination currentPage={currentPage} totalPages={totalPages} />
+        </Suspense>
       ) : (
         <PaginationSkeleton />
       )}

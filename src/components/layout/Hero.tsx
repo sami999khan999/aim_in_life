@@ -3,7 +3,7 @@ import SearchBar from "../ui/SearchBar";
 const Hero = () => {
   return (
     <div className="flex items-center justify-center px-4">
-      <div className="flex flex-col items-center justify-center gap-8 mt-35 max-w-[48rem] w-full">
+      <div className="flex flex-col items-center justify-center gap-8 mt-35 max-w-[48rem] w-full z-10">
         <div className="flex flex-col items-center justify-center text-center">
           <h1
             className="gradient-text font-medium w-fit

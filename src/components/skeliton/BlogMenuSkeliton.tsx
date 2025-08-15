@@ -2,10 +2,10 @@ import React from "react";
 
 const BlogMenuSkeliton = () => {
   return (
-    <div className="space-y-space-xl px-space-sm">
+    <div className="space-y-space-xl px-space-sm w-full">
       {[1, 2, 3].map((_, i) => (
         <div
-          className="relative bg-bg-light p-space-base rounded-xl shadow-sm animate-pulse"
+          className="relative bg-bg-light p-space-base rounded-xl shadow-sm animate-pulse w-full"
           key={i}
         >
           <div className="flex gap-space-xl flex-col lg:flex-row">

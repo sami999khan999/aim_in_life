@@ -44,7 +44,7 @@ const BlogsMenu = ({
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${blog.image}`}
                   alt={blog.title}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   className="hover:scale-105 duration-300"
                 />
               </div>
@@ -56,10 +56,13 @@ const BlogsMenu = ({
                   {blog.title}
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </h2>
+                <p className="text-xs font-outfit mt-space-xs text-text-color-muted">
+                  {blog.category.category_description}
+                </p>
 
-                <div className="hidden lg:block mt-space-lg">
+                <div className="hidden lg:block mt-space-lg text-text-color-muted ">
                   <div
-                    className="shrink-0 line-clamp-3 my-auto text-size-14 tracking-wide cursor-pointer"
+                    className="shrink-0 line-clamp-3 my-auto text-size-14 tracking-wider cursor-pointer"
                     dangerouslySetInnerHTML={{ __html: blog.short_description }}
                   />
                 </div>

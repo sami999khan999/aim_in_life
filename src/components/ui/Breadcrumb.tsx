@@ -1,9 +1,14 @@
 "use client";
 
+import { ClassValue } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Breadcrumb() {
+export default function Breadcrumb({
+  className = "text-text-color",
+}: {
+  className?: ClassValue;
+}) {
   const pathname = usePathname();
 
   const pathSegments = pathname
@@ -22,20 +27,24 @@ export default function Breadcrumb() {
   ];
 
   return (
-    <nav className="text-sm text-gray-500">
-      <ol className="flex items-center text-size-16">
+    <nav>
+      <ol
+        className={`flex items-center lg:text-size-16 text-size-14 ${className}`}
+      >
         {breadcrumbs.map((crumb, index) => (
           <li key={crumb.href} className="flex items-center">
-            {index > 0 && <span className="mx-space-sm font-medium"> • </span>}
+            {index > 0 && <span className="mx-space-sm font-medium"> / </span>}
             {index < breadcrumbs.length - 1 ? (
               <Link
                 href={crumb.href}
-                className="hover:underline text-text-color duration-200 hover:text-primary"
+                className="hover:underline  duration-200 hover:text-primary"
               >
                 {crumb.name}
               </Link>
             ) : (
-              <span className="text-text-color-muted">{crumb.name}</span>
+              <span className={`line-clamp-1 text-primary/70`}>
+                {crumb.name}
+              </span>
             )}
           </li>
         ))}

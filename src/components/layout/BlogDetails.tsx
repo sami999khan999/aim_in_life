@@ -15,18 +15,18 @@ const BlogDetails = ({ blog }: { blog: BlogDataType | undefined }) => {
             className={`group relative inline-flex items-center gap-space-xs text-text-color-muted cursor-pointer hover:text-primary`}
           >
             <span className={`text-primary`}>#</span>
-            <p className="text-size-14 font-medium">
+            <p className="lg:text-size-14 text-size-10 font-medium">
               {blog?.category.category_name}
             </p>
 
             <hr className="absolute bottom-0 left-0 w-full border-t opacity-0 transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:-translate-y-0" />
           </div>
-          <h2 className="font-anek-bangla lg:text-size-28 text-size-24 font-medium text-text-color ">
+          <h2 className="font-anek-bangla lg:text-size-28 text-size-18 font-medium text-text-color h-[2rem]">
             {blog?.title}
           </h2>
         </div>
         <hr className="border-b border-border/50 my-space-md" />
-        <div className="text-text-color-muted">
+        <div className="text-text-color-muted text-size-14 ">
           {formatDate(blog?.created_at as string)}
         </div>
       </div>
@@ -47,12 +47,12 @@ const BlogDetails = ({ blog }: { blog: BlogDataType | undefined }) => {
         <Breadcrumb />
       </div>
 
-      <div className="flex gap-space-xl">
-        <div className="relative w-[70%]">
+      <div className="flex gap-space-xl flex-col lg:flex-row">
+        <div className="relative lg:w-[70%]">
           <div
             className={`absolute top-0 -left-[5px] -z-10 w-20 h-full rounded-l-[1rem] ${"bg-primary"}`}
           ></div>
-          <div className="bg-bg-light rounded-lg shadow-sm p-space-lg">
+          <div className="bg-bg-light rounded-lg shadow-sm p-space-lg h-full ">
             <div className="font-anek-bangla text-text-color text-size-18">
               {blog && (
                 <div className="">
@@ -71,7 +71,7 @@ const BlogDetails = ({ blog }: { blog: BlogDataType | undefined }) => {
             </div>
           </div>
         </div>
-        <div className="lg:w-30%">
+        <div className="lg:w-[30%]">
           <BlogSideMenu />
         </div>
       </div>

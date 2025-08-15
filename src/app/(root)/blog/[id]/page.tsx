@@ -2,15 +2,13 @@
 
 import BlogDetails from "@/components/layout/BlogDetails";
 import { BlogData } from "@/constants/NavConstants";
-import useBlogState from "@/hooks/useBlogState";
-import { BlogDataType, BlogResponse } from "@/types/blogTypes";
-import apiClient from "@/utils/apiClient";
+import { BlogDataType } from "@/types/blogTypes";
 import { useParams } from "next/navigation";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Page = () => {
   const { id } = useParams();
-  const { setError, blog, setBlog } = useBlogState<BlogDataType | undefined>();
+  const [blog, setBlog] = useState<BlogDataType | undefined>();
 
   const title = decodeURIComponent(id as string);
 
@@ -31,7 +29,7 @@ const Page = () => {
     };
 
     getBlog();
-  }, [title]);
+  }, [title, setBlog]);
 
   console.log(blog);
 

@@ -44,3 +44,7 @@ export type BlogsResponse = {
 export type BlogResponse = {
   blog: BlogDataType;
 };
+
+export type CategoryResponse = {
+  categories: Category[];
+};

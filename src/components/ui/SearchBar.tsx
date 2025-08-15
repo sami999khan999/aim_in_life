@@ -13,27 +13,24 @@ const SearchBar = ({ className }: { className?: ClassValue }) => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const searchParams = new URLSearchParams(window.location.search);
+    const newQueryString = query.trim()
+      ? `search=${encodeURIComponent(query.trim())}`
+      : "";
 
-    if (!query.trim()) {
-      searchParams.delete("search");
-    } else {
-      searchParams.set("search", query.trim());
-    }
-
-    const newQueryString = searchParams.toString();
     const newUrl = newQueryString
       ? `${window.location.pathname}?${newQueryString}`
       : window.location.pathname;
 
-    router.push(newUrl);
+    console.log(newUrl);
+
+    router.push(`blog/${newUrl}`);
   };
 
   return (
     <form
       onSubmit={handleSearch}
       className={cn(
-        "flex items-center border border-border rounded-full pl-space-lg w-[90%] bg-bg-light py-space-xs pr-space-xs",
+        "flex items-center border border-border rounded-full pl-space-lg w-[90%] bg-bg-light py-space-xs pr-space-xs z-10",
         className
       )}
     >
@@ -42,13 +39,13 @@ const SearchBar = ({ className }: { className?: ClassValue }) => {
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-grow outline-none border-none"
+        className="flex-grow outline-none border-none text-size-14"
       />
       <button
         type="submit"
-        className="bg-primary p-space-sm rounded-full text-bg-light hover:bg-text-color flex items-center justify-center duration-300"
+        className="bg-primary p-[8px] rounded-full text-bg-light hover:bg-text-color flex items-center justify-center duration-300"
       >
-        <FiSearch size={16} />
+        <FiSearch size={14} />
       </button>
     </form>
   );
