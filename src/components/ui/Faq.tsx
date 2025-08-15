@@ -15,7 +15,7 @@ const FaqSection = () => {
 
   return (
     <section>
-      <div className="space-y-[2rem]">
+      <div className="space-y-[2rem] px-space-sm">
         <Heading title="Frequently Asked Questions" />
         <div className="lg:w-[70%] mx-auto bg-bg-light rounded-xl p-space-base">
           {blogFaqs.map((faq, i) => (
@@ -36,7 +36,7 @@ const FaqSection = () => {
                 aria-expanded={openIndex === i}
               >
                 {faq.question}
-                <span className="text-text-color-muted text-size-24">
+                <span className="text-text-color-muted text-size-24 text-left">
                   <IoIosArrowDown
                     size={18}
                     className={cn(
