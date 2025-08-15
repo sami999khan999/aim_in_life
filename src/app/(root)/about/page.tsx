@@ -4,6 +4,12 @@ import PageHeader from "@/components/ui/PageHeader";
 import Image from "next/image";
 import React from "react";
 
+export const metadata = () => {
+  return {
+    title: "Aim In Life - About",
+  };
+};
+
 const Page = () => {
   return (
     <div className="w-full">

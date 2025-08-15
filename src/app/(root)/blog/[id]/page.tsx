@@ -1,41 +1,28 @@
-"use client";
+import { Metadata } from "next";
+import BlogDetailsPage from "./BlogDetailsPage";
 
-import BlogDetails from "@/components/layout/BlogDetails";
-import { BlogData } from "@/constants/NavConstants";
-import { BlogDataType } from "@/types/blogTypes";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+type Props = {
+  params: Promise<{ id: string }>;
+};
 
-const Page = () => {
-  const { id } = useParams();
-  const [blog, setBlog] = useState<BlogDataType | undefined>();
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const blogId = (await params).id;
 
-  const title = decodeURIComponent(id as string);
+  const title = decodeURIComponent(blogId as string);
 
-  useEffect(() => {
-    const getBlog = async () => {
-      // const { data, error } = await apiClient<BlogResponse>(`blogs/${title}`);
-      // if (error) {
-      //   setError("Cound Not Fetch Blogs Due To Network Error");
-      //   setBlog(undefined);
-      //   return;
-      // }
+  return {
+    title: `${title}`,
+  };
+};
 
-      // if (data) {
-      //   setBlog(data.blog);
-      // }
-
-      setBlog(BlogData.blogs.data[0]);
-    };
-
-    getBlog();
-  }, [title, setBlog]);
-
-  console.log(blog);
+const Page = async ({ params }: Props) => {
+  const blogId = (await params).id;
 
   return (
     <div>
-      <BlogDetails blog={blog} />
+      <BlogDetailsPage id={blogId} />
     </div>
   );
 };

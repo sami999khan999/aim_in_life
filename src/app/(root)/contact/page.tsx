@@ -2,6 +2,12 @@ import ContactForm from "@/components/ui/ContactForm";
 import FaqSection from "@/components/ui/Faq";
 import PageHeader from "@/components/ui/PageHeader";
 
+export const metadata = () => {
+  return {
+    title: "Aim In Life - Contact",
+  };
+};
+
 const Page = () => {
   return (
     <section className="min-h-screen">
