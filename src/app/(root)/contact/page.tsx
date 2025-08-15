@@ -1,8 +1,6 @@
 import ContactForm from "@/components/ui/ContactForm";
 import FaqSection from "@/components/ui/Faq";
-import Heading from "@/components/ui/Heading";
 import PageHeader from "@/components/ui/PageHeader";
-import React from "react";
 
 const Page = () => {
   return (

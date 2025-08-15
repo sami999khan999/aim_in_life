@@ -35,7 +35,7 @@ const BlogsMenu = ({
             }`}
           ></div>
           <div className="relative bg-bg-light p-space-base rounded-xl shadow-sm">
-            <div className="flex gap-space-xl flex-col lg:flex-row">
+            <div className="flex gap-space-xl flex-col lg:flex-row items-center">
               <div
                 className="relative w-[150px] h-[150px] bg-bg-dark rounded-xl overflow-hidden border-border shrink-0 shadow-sm"
                 onClick={() => (window.location.href = `/blog/${blog.slug}`)}

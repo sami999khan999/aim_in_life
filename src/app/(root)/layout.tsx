@@ -1,6 +1,6 @@
 import NavBar from "@/components/navigation/NavBar";
 import ToastProvider from "@/components/ui/ToastProvider";
-import React, { Suspense } from "react";
+import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
