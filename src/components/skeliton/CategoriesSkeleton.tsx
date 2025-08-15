@@ -1,11 +1,11 @@
 "use client";
 
-const CategoriesSkeleton = () => {
+const CategoriesSkeleton = ({ limit = 32 }: { limit?: number }) => {
   return (
     <div className="space-y-space-sm animate-pulse">
       {/* Categories Placeholder */}
       <div className="flex flex-wrap gap-space-md w-full">
-        {[...Array(32)].map((_, i) => (
+        {[...Array(limit)].map((_, i) => (
           <div
             key={i}
             className={`h-4 bg-bg-dark rounded ${

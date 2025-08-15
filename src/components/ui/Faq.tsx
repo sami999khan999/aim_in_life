@@ -3,6 +3,8 @@
 import { blogFaqs } from "@/constants/FaqConstants";
 import { useState } from "react";
 import Heading from "./Heading";
+import { cn } from "@/lib/utils";
+import { IoIosArrowDown } from "react-icons/io";
 
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -12,29 +14,49 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="">
-      <div className="space-y-[3rem]">
+    <section>
+      <div className="space-y-[2rem]">
         <Heading title="Frequently Asked Questions" />
-        <div className="space-y-space-lg">
+        <div className="lg:w-[70%] mx-auto bg-bg-light rounded-xl p-space-base">
           {blogFaqs.map((faq, i) => (
             <div
               key={i}
-              className="bg-bg-light py-space-base rounded-lg px-space-lg"
+              onClick={() => toggleFaq(i)}
+              className={cn(
+                "relative overflow-hidden transition-all duration-300 ease-in-out rounded-md",
+
+                "hover:cursor-pointer hover:bg-bg-dark lg:px-space-base text-start",
+                openIndex === i
+                  ? "max-h-[800px] py-space-base"
+                  : "lg:max-h-[3.5rem] max-h-[3.3rem] py-space-base"
+              )}
             >
               <button
-                onClick={() => toggleFaq(i)}
-                className="flex justify-between w-full text-size-18 font-medium text-text-color-muted"
+                className="flex justify-between w-full text-size-18 font-medium text-text-color/80"
+                aria-expanded={openIndex === i}
               >
                 {faq.question}
                 <span className="text-text-color-muted text-size-24">
-                  {openIndex === i ? "−" : "+"}
+                  <IoIosArrowDown
+                    size={18}
+                    className={cn(
+                      "transform transition-transform duration-300",
+                      openIndex === i && "rotate-180"
+                    )}
+                  />
                 </span>
               </button>
 
-              {/* Answer */}
-              {openIndex === i && (
-                <div className="text-text-color text-size-16">{faq.answer}</div>
-              )}
+              <div
+                className={cn(
+                  "text-text-color-muted transition-all duration-300 ease-in-out",
+                  openIndex === i
+                    ? "opacity-100 mt-3 translate-y-0"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                )}
+              >
+                {faq.answer}
+              </div>
             </div>
           ))}
         </div>

@@ -46,13 +46,13 @@ const Categories = ({ limit }: { limit?: number }) => {
   return (
     <div className="space-y-space-sm">
       {isLoading ? (
-        <CategoriesSkeleton />
+        <CategoriesSkeleton limit={limit} />
       ) : (
         <div className="flex flex-wrap gap-space-md w-full">
           {displayedCategories?.map((category, i) => (
             <div
               key={i}
-              className={`text-size-14 text-text-color cursor-pointer duration-200 ${
+              className={`text-size-14 cursor-pointer duration-200 font-medium text-text-color-muted ${
                 i % 2 === 0 ? "hover:text-primary" : "hover:text-secondary"
               }`}
               onClick={() => handleCategoryClick(category.category_name)}

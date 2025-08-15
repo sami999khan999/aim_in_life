@@ -53,21 +53,21 @@ const Pagination = ({
   return (
     <div className="flex justify-center my-space-xl">
       {totalPages > 1 && (
-        <div className="text-text mt-3 flex gap-1 md:gap-2 items-center bg-bg-light px-space-base py-space-xs rounded-md shadow-md">
+        <div className="text-text mt-3 flex gap-1 md:gap-2 items-center px-space-base py-space-xs rounded-md border border-border-muted">
           {currentPage > 1 ? (
             <Link
               href={buildQueryString(currentPage - 1)}
               aria-label="Previous page"
               className="px-2 py-1 md:px-3 md:py-1.5 rounded"
             >
-              <IoIosArrowBack className="w-4 h-4 md:w-5 md:h-5" />
+              <IoIosArrowBack className="w-4 h-4" />
             </Link>
           ) : (
             <span
               className="px-2 py-1 md:px-3 md:py-1.5 rounded cursor-not-allowed text-text-color-muted"
               aria-disabled="true"
             >
-              <IoIosArrowBack className="w-4 h-4 md:w-5 md:h-5" />
+              <IoIosArrowBack className="w-4 h-4 " />
             </span>
           )}
 
@@ -102,14 +102,14 @@ const Pagination = ({
               aria-label="Next page"
               className="px-2 py-1 md:px-3 md:py-1.5 rounded hover:bg-bg"
             >
-              <IoIosArrowForward className="w-4 h-4 md:w-5 md:h-5" />
+              <IoIosArrowForward className="w-4 h-4" />
             </Link>
           ) : (
             <span
               className="px-2 py-1 md:px-3 md:py-1.5 rounded cursor-not-allowed text-text-color-muted hover:bg-bg"
               aria-disabled="true"
             >
-              <IoIosArrowForward className="w-4 h-4 md:w-5 md:h-5" />
+              <IoIosArrowForward className="w-4 h-4" />
             </span>
           )}
         </div>

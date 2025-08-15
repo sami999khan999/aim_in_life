@@ -26,7 +26,7 @@ const NavSheet = () => {
       )}
 
       <div
-        className={`fixed top-[calc(3.5rem+1.2rem)] transition-transform duration-300 ease-in-out z-50 h-[calc(100vh-3.5rem-2rem)] w-[200px] rounded-lg shadow-lg bg-bg-light p-space-md overflow-y-auto py-space-lg overflow-x-auto`}
+        className={`fixed top-[calc(4rem+1.2rem)] transition-transform duration-300 ease-in-out z-50 h-[calc(100vh-3.5rem-2rem)] w-[300px] rounded-lg shadow-lg bg-bg-light p-space-md overflow-y-auto py-space-lg overflow-x-auto px-space-xl`}
         style={{
           transform: isOpen
             ? "translateX(0)"

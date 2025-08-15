@@ -1,0 +1,33 @@
+import ContactForm from "@/components/ui/ContactForm";
+import FaqSection from "@/components/ui/Faq";
+import Heading from "@/components/ui/Heading";
+import PageHeader from "@/components/ui/PageHeader";
+import React from "react";
+
+const Page = () => {
+  return (
+    <section className="min-h-screen">
+      <div className="container mx-auto space-y-[5rem]">
+        <PageHeader />
+
+        <div className="space-y-[2rem] flex gap-space-lg">
+          <div className="lg:w-[50%] space-y-space-lg shrink-0">
+            <h2 className="text-size-28 font-medium text-text-color w-[70%]">
+              Love great reads? So do we discover something new today.
+            </h2>
+            <p className="text-text-color-muted w-[70%]">
+              Join our weekly newsletter for practical guides, honest reviews,
+              and the best stories from the blog. One short email each week — no
+              spam, just value.
+            </p>
+          </div>
+          <ContactForm />
+        </div>
+
+        <FaqSection />
+      </div>
+    </section>
+  );
+};
+
+export default Page;

@@ -11,10 +11,10 @@ const page = () => {
     <div className="space-y-space-lg ">
       <PageHeader />
 
-      <div className="flex items-center gap-space-lg mx-space-base mb-space-md">
+      {/* <div className="flex items-center gap-space-lg mx-space-base mb-space-md">
         <PingAnimation />
         <h2 className="text-size-18 font-medium text-text-color">Blogs</h2>
-      </div>
+      </div> */}
       <div className="flex gap-space-lg flex-col lg:flex-row">
         <div className="lg:w-[70%]">
           <Suspense>

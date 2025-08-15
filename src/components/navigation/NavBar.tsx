@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className="sticky top-space-sm z-20">
       <div className="display-size rounded-lg">
-        <div className="flex justify-between items-center bg-bg-light h-[3.5rem] px-space-base relative rounded-xl shadow-sm">
+        <div className="flex justify-between items-center bg-bg-light h-[4rem] px-space-base relative rounded-xl shadow-sm">
           <Logo />
           <div className="lg:flex hidden z-30">
             <NavItems />
