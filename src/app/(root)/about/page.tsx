@@ -1,8 +1,6 @@
 import FaqSection from "@/components/ui/Faq";
-import Heading from "@/components/ui/Heading";
 import PageHeader from "@/components/ui/PageHeader";
 import Image from "next/image";
-import React from "react";
 
 export const metadata = () => {
   return {
@@ -15,7 +13,7 @@ const Page = () => {
     <div className="w-full">
       <PageHeader />
       <div className="my-[4rem] space-y-space-lg">
-        <Heading title="About Us" />
+        {/* <Heading title="About Us" /> */}
         <section className="flex flex-col lg:flex-row lg:gap-[4rem] gap-[2rem]  font-outfit py-space-base rounded-xl w-full items-center">
           <div className="lg:w-[40%] w-full h-[20rem] aspect-square relative rounded-2xl overflow-hidden">
             <Image
@@ -29,7 +27,7 @@ const Page = () => {
           <div className="lg:w-[60%] space-y-space-base">
             <div className="flex gap-space-lg">
               <div className="h-[4.8rem] w-1 bg-primary shrink-0"></div>
-              <h2 className="text-size-28 font-semibold text-text-color lg:w-[80%]">
+              <h2 className="lg:text-size-28 text-size-24 font-semibold text-text-color lg:w-[80%]">
                 Transforming Your Vision Into a Stunning Digital Experience!
               </h2>
             </div>

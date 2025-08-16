@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row gap-space-lg justify-between px-space-base">
           <div className="lg:w-[30%]">
             <Logo />
-            <p className="text-text-color-muted leading-6 mt-space-base w-[80%]">
+            <p className="text-text-color-muted leading-6 mt-space-base lg:w-[80%]">
               Welcome to our blog, where we share insightful articles, tips, and
               stories to inspire, educate, and engage readers. Discover ideas,
               trends, and knowledge crafted just for you.

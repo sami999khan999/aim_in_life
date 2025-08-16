@@ -33,7 +33,7 @@ const NavItems = () => {
                 <DropdownMenuContent
                   sideOffset={0}
                   align="center"
-                  className="z-30 bg-bg-light border border-border rounded-md px-space-lg py-space-lg mt-space-sm shadow-md lg:mx-0"
+                  className="z-30 bg-bg-light border border-border rounded-md px-space-lg py-space-lg mt-space-sm shadow-md "
                 >
                   <div className="grid grid-cols-2 gap-x-6 gap-y-4 lg:grid-cols-4 lg:grid-rows-1">
                     {link.services.map((category) => (
@@ -68,7 +68,7 @@ const NavItems = () => {
           ) : link.name === "Contact" ? (
             <Link
               href={link.href as string}
-              className="bg-primary text-bg-light px-space-base py-space-sm rounded-sm flex items-center gap-space-sm hover:bg-text-color duration-300 group"
+              className="bg-primary text-bg-light px-space-base py-space-sm rounded-sm flex items-center gap-space-sm hover:bg-text-color duration-300 group "
             >
               <MdPhone className="group-hover:animate-pulse" />
               {link.name}

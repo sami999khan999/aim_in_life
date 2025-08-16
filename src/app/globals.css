@@ -159,3 +159,8 @@
     opacity: 0;
   }
 }
+
+::selection {
+  background: var(--text-color-muted);
+  color: var(--bg-dark);
+}

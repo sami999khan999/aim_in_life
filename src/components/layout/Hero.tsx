@@ -7,15 +7,15 @@ const Hero = () => {
         <div className="flex flex-col items-center justify-center text-center">
           <h1
             className="gradient-text font-medium w-fit
-            text-[2rem]  md:text-[2.7rem] 
-            xs:text-[1.8rem]"
+            text-[1.8rem]  md:text-[2.7rem] 
+            "
           >
             Creating Blog Platforms That Engage
           </h1>
           <h1
             className="font-medium w-fit text-text-color
-            text-[2rem]  md:text-[2.7rem] 
-            xs:text-[1.8rem]"
+              md:text-[2.7rem] 
+           text-[1.7rem]"
           >
             and Inspire Audiences
           </h1>
