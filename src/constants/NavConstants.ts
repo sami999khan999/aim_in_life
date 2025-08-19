@@ -51,6 +51,10 @@ export const NAV_LINKS = [
     href: "/blog",
   },
   {
+    name: "Appointment ",
+    href: "/appointment",
+  },
+  {
     name: "About",
     href: "/about",
   },
